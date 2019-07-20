@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+   <package name="student" extends="struts-default" namespace="/student">
+          <global-results>
+                <result name="findAll" type="redirect">findAll</result>
+          </global-results>
+            <action name="toInsert" method="toInsert" class="com.cn.zzy.action.StudentAction">
+            <result name="toInsert">save.jsp</result>
+            </action>
+          <action name="insert" method="insert" class="com.cn.zzy.action.StudentAction"></action>
+          <action name="update" method="update" class="com.cn.zzy.action.StudentAction"></action>
+          <action name="delete" method="delete" class="com.cn.zzy.action.StudentAction"></action>
+         
+            <action name="upone" method="upone" class="com.cn.zzy.action.StudentAction">
+             <result name="upone">DormMange/index.jsp</result>
+             </action>
+  
+            <action name="findAll" method="findAll" class="com.cn.zzy.action.StudentAction">
+                <result name="list">list.jsp</result>
+            </action>
+            <action name="toUpdate" method="toUpdate" class="com.cn.zzy.action.StudentAction">
+                <result name="toUpdate">update.jsp</result>
+            </action>
+             <action name="tofindOne" method="tofindOne" class="com.cn.zzy.action.StudentAction">
+                <result name="tofindOne">tofindOne.jsp</result>
+            </action>
+            
+             <action name="toPay" method="toPay" class="com.cn.zzy.action.StudentAction"></action>
+               <action name="findCost" method="findCost" class="com.cn.zzy.action.StudentAction">
+               <result name="findCost">charge.jsp</result>
+               </action>
+                <action name="Pay" method="Pay" class="com.cn.zzy.action.StudentAction">
+               <result name="Pay">success.jsp</result>
+               </action>
+                 <action name="Alipay" method="Alipay" class="com.cn.zzy.action.StudentAction">
+               <result name="Alipay">index.jsp</result>
+               </action>
+            
+               <action name="AlipaySuccess" method="AlipaySuccess" class="com.cn.zzy.action.StudentAction">
+               </action>
+                  <action name="findStuSelf" method="findStuSelf" class="com.cn.zzy.action.StudentAction">
+               </action>
+            <!-- 申请退宿-->
+                <action name="outDrom" method="outDrom" class="com.cn.zzy.action.StudentAction">
+               </action>
+               <!-- 查看消息 -->
+                <action name="Smsg" method="Smsg" class="com.cn.zzy.action.StudentAction">
+               </action>
+              
+               <action name="findStuSelf1" method="findStuSelf1" class="com.cn.zzy.action.StudentAction">
+               <result name="findSelf1">self1.jsp</result>
+               </action>
+   </package>
+
+</struts>

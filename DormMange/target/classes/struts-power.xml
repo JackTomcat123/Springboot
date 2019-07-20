@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	<struts>
+		<package name="power" extends="struts-default" namespace="/power">
+			<global-results>
+				<result name="findAll" type="redirect">findAll</result>
+			</global-results>
+			<action name="findAll" class="com.cn.zzy.action.PowerAction" method="findAll">
+				<result name="list">list.jsp</result>
+			</action>
+			<action name="save"  class="com.cn.zzy.action.PowerAction" method="save"></action>
+			<action name="update"  class="com.cn.zzy.action.PowerAction" method="update"></action>
+			<action name="delete"  class="com.cn.zzy.action.PowerAction" method="delete"></action>
+			<action name="toUpdate"  class="com.cn.zzy.action.PowerAction" method="toUpdate">
+				<result name="update">update.jsp</result>
+			</action>
+				<action name="findPowerMgrById"  class="com.cn.zzy.action.PowerAction" method="findPowerMgrById">
+			</action>
+			<action name="Addmenu"  class="com.cn.zzy.action.PowerAction" method="Addmenu">
+			<result name="Add">ajax.jsp</result>
+			</action>
+			<action name="ajaxSave"  class="com.cn.zzy.action.PowerAction" method="ajaxSave">
+			</action>
+			<action name="ajaxView"  class="com.cn.zzy.action.PowerAction" method="ajaxView">
+			</action>
+			<action name="ajaxUpdate"  class="com.cn.zzy.action.PowerAction" method="ajaxUpdate">
+			</action>
+				<action name="findPowerMgrById3"  class="com.cn.zzy.action.PowerAction" method="findPowerMgrById3">
+			</action>
+		</package>		
+	</struts>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+      xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+          http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+        ">
+      <!-- dataSource -->
+      <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+      		<property name="username" value="root" />
+    		<property name="password" value="root" />
+    		<property name="url" value="jdbc:mysql://localhost:3306/drom?characterEncoding=utf8"/>
+    		<property name="driverClassName" value="org.gjt.mm.mysql.Driver"/>
+    		<!-- 调试等待时间 -->
+    		<property name="maxActive" value="100"></property>
+    		<property name="maxIdle" value="30"></property>
+    		<property name="maxWait" value="10000"></property>
+      </bean>
+      <!-- sessionFactory -->
+      <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+      	<!-- 四大金刚 -->
+      	<property name="dataSource" ref="dataSource"></property>
+      	<!-- 选填项 -->
+      	<property name="hibernateProperties">
+      		<props>
+      			<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+      			<prop key="hibernate.show_sql">true</prop>
+      			<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
+      			<!-- <prop key="javax.persistence.validation.mode">none</prop>   -->
+      		</props>
+      	</property>
+      	<!-- 引用 -->
+      	<property name="packagesToScan" value="com.cn.*.entity"></property>
+      </bean>
+       	 <!-- hibernateTemplate -->
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>   
+      
+      
+      
+    	
+    	
+    	
+        
+</beans>

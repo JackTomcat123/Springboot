@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+   <package name="teacher" extends="struts-default" namespace="/teacher">
+          <global-results>
+                <result name="findAll" type="redirect">findAll</result>
+          </global-results>
+            <action name="toInsert" method="toInsert" class="com.cn.zzy.action.TeacherAction">
+            <result name="toInsert">save.jsp</result>
+            </action>
+          <action name="insert" method="insert" class="com.cn.zzy.action.TeacherAction"></action>
+          <action name="update" method="update" class="com.cn.zzy.action.TeacherAction"></action>
+          <action name="delete" method="delete" class="com.cn.zzy.action.TeacherAction"></action>
+             <action name="upone" method="upone" class="com.cn.zzy.action.TeacherAction">
+             <result name="upone">DormMange/index.jsp</result>
+             </action>
+            <action name="findAll" method="findAll" class="com.cn.zzy.action.TeacherAction">
+                <result name="list">list.jsp</result>
+            </action>
+            <action name="toUpdate" method="toUpdate" class="com.cn.zzy.action.TeacherAction">
+                <result name="toUpdate">update.jsp</result>
+            </action>
+            <action name="tofindOne" method="tofindOne" class="com.cn.zzy.action.TeacherAction">
+                <result name="tofindOne">tofindOne.jsp</result>
+            </action>
+            <!--查询学生管理入住  -->
+             <action name="findbylike" method="findbylike" class="com.cn.zzy.action.TeacherAction"></action>
+             <!-- 学生办理入住 -->
+             <action name="DepartStudent" method="DepartStudent" class="com.cn.zzy.action.TeacherAction">
+                <result name="DepartStudent"> DepartStudent.jsp</result>
+            </action>
+            <!-- 根据性别查楼 -->
+              <action name="findBuildbySex" method="findBuildbySex" class="com.cn.zzy.action.TeacherAction"></action>
+   <!-- 根据楼查房间 -->
+    <action name="findDorm" method="findDorm" class="com.cn.zzy.action.TeacherAction"></action>
+    <!--根据宿舍查询学生  -->
+    
+    <action name="findPerson" method="findPerson" class="com.cn.zzy.action.TeacherAction"></action>
+    <!--审批学生申请  -->
+  <action name="Pass" method="Pass" class="com.cn.zzy.action.TeacherAction"></action>
+        <action name="NotPass" method="NotPass" class="com.cn.zzy.action.TeacherAction"></action>
+      
+            <action name="Tmsg" method="Tmsg" class="com.cn.zzy.action.TeacherAction"></action>
+            <!-- 宿管登陆消息提示 -->
+         
+                <action name="Dmsg" method="Dmsg" class="com.cn.zzy.action.TeacherAction"></action>
+               <!-- 执行退宿 -->
+                 <action name="Dpass" method="Dpass" class="com.cn.zzy.action.TeacherAction"></action>
+                 <!--  查询消息-->
+                
+                 <action name="findDMsg" method="findDMsg" class="com.cn.zzy.action.TeacherAction">
+                 <result name="findDMsg">self2.jsp</result>
+                 </action>
+                 <action name="findTMsg" method="findTMsg" class="com.cn.zzy.action.TeacherAction">
+                 <result name="findTMsg">self1.jsp</result>
+                 </action>
+                  <action name="findOMsg" method="findOMsg" class="com.cn.zzy.action.TeacherAction">
+                 <result name="findOMsg">outlt.jsp</result>
+                 </action>
+                 <action name="findBuild" method="findBuild" class="com.cn.zzy.action.TeacherAction"></action>
+                 <action name="findDormByBid" method="findDormByBid" class="com.cn.zzy.action.TeacherAction"></action>
+                  <action name="findDetil" method="findDetil" class="com.cn.zzy.action.TeacherAction"></action>
+              <action name="change" method="change" class="com.cn.zzy.action.TeacherAction"></action>
+                 <action name="Tochange" method="Tochange" class="com.cn.zzy.action.TeacherAction"></action>
+                 <action name="findbylike1" method="findbylike1" class="com.cn.zzy.action.TeacherAction"></action>
+                   <action name="findOutlt" method="findOutlt" class="com.cn.zzy.action.TeacherAction">
+                   <result name="findOutlt">findOutlt.jsp</result>
+                   
+                   </action>
+                    <action name="findDetil2" method="findDetil2" class="com.cn.zzy.action.TeacherAction"></action>
+                   <action name="PrePay" method="PrePay" class="com.cn.zzy.action.TeacherAction">
+                   </action>
+                    <action name="Pay" method="Pay" class="com.cn.zzy.action.TeacherAction">
+                   </action>
+                 
+  
+   </package>
+   
+   
+</struts>

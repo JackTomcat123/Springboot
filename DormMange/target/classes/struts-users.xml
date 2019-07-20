@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	<struts>
+		<package name="users" extends="struts-default">
+			<global-results>
+				<result name="findAll" type="redirect">findAll</result>
+			</global-results>
+			<action name="findAll" class="com.cn.zzy.action.UsersAction" method="findAll">
+				<result name="list">list.jsp</result>
+			</action>
+			<action name="save"  class="com.cn.zzy.action.UsersAction" method="save"></action>
+			<action name="update"  class="com.cn.zzy.action.UsersAction" method="update"></action>
+			<action name="delete"  class="com.cn.zzy.action.UsersAction" method="delete"></action>
+			<action name="toUpdate"  class="com.cn.zzy.action.UsersAction" method="toUpdate">
+				<result name="update">update.jsp</result>
+			</action>
+			<action name="login"  class="com.cn.zzy.action.UsersAction" method="login">
+				<result name="error">login.jsp</result>
+				<result name="success">index.jsp</result>
+			</action>
+			<action name="toRole"  class="com.cn.zzy.action.UsersAction" method="toRole">
+				<result name="toRole">role.jsp</result>
+			</action>
+			<action name="role"  class="com.cn.zzy.action.UsersAction" method="role">
+			</action>
+		</package>		
+	</struts>

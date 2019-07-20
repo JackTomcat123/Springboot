@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+	<struts>
+		<package name="role" extends="struts-default" namespace="/role">
+			<global-results>
+				<result name="findAll" type="redirect">findAll</result>
+			</global-results>
+			<action name="findAll" class="com.cn.zzy.action.RoleAction" method="findAll">
+				<result name="list">list.jsp</result>
+			</action>
+			<action name="save"  class="com.cn.zzy.action.RoleAction" method="save"></action>
+			<action name="update"  class="com.cn.zzy.action.RoleAction" method="update"></action>
+			<action name="delete"  class="com.cn.zzy.action.RoleAction" method="delete"></action>
+			<action name="toUpdate"  class="com.cn.zzy.action.RoleAction" method="toUpdate">
+				<result name="update">update.jsp</result>
+			</action>
+			 <action name="toPower" class="com.cn.zzy.action.RoleAction" method="toPower">
+			<result name="toPower">
+			power.jsp
+			</result>
+			</action>
+			<action name="toPower3"  class="com.cn.zzy.action.RoleAction" method="toPower3">
+				<result name="toPower3">power3.jsp</result>
+			</action>
+			<action name="Power" class="com.cn.zzy.action.RoleAction" method="Power"></action> 
+		</package>		
+	</struts>

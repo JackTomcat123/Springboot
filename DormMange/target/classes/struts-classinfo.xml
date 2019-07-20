@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+   <package name="classinfo" extends="struts-default" namespace="/classinfo">
+          <global-results>
+                <result name="findAll" type="redirect">findAll</result>
+          </global-results>
+            <action name="toInsert" method="toInsert" class="com.cn.zzy.action.ClassInfoAction">
+            <result name="toInsert">save.jsp</result>
+            </action>
+          <action name="insert" method="insert" class="com.cn.zzy.action.ClassInfoAction"></action>
+          <action name="update" method="update" class="com.cn.zzy.action.ClassInfoAction"></action>
+          <action name="delete" method="delete" class="com.cn.zzy.action.ClassInfoAction"></action>
+          
+  
+            <action name="findAll" method="findAll" class="com.cn.zzy.action.ClassInfoAction">
+                <result name="list">list.jsp</result>
+            </action>
+            <action name="toUpdate" method="toUpdate" class="com.cn.zzy.action.ClassInfoAction">
+                <result name="toUpdate">update.jsp</result>
+            </action>
+             
+   </package>
+
+</struts>
