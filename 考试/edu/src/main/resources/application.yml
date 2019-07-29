@@ -1,0 +1,55 @@
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+server:
+  port: 8087
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  datasource:
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    driverClassName: com.mysql.jdbc.Driver
+    filters: stat,wall,log4j
+    initialSize: 5
+    maxActive: 20
+    maxPoolPreparedStatementPerConnectionSize: 20
+    maxWait: 60000
+    minEvictableIdleTimeMillis: 300000
+    minIdle: 5
+    password: root
+    poolPreparedStatements: true
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/edu?useUnicode=true&characterEncoding=utf8
+    useGlobalDataSourceStat: true
+    username: root
+    validationQuery: SELECT 'x'
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+ #服务注册中心实例的主机名
+  application:
+    name: eureka-client
+eureka:
+  #自我保护模式关闭
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: localhost
+  client:
+    #是否向服务注册中心注册自己
+    registerWithEureka: true
+    #是否检索服务
+    fetchRegistry: true
+    #服务注册中心的配置内容，指定服务注册中心的位置
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8888/eureka/
+   

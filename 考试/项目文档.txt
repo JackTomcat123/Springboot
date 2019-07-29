@@ -1,0 +1,8 @@
+学生登录：http://localhost:8080
+老师denglu:http://localhost:8080/admin/index.jsp
+edu
+root
+root
+先发布试卷，给试卷添加试题
+安排考试
+老师发布考试，安排相应班级考式，然后该班学生登录考试
